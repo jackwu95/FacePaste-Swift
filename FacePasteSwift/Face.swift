@@ -10,7 +10,7 @@ import UIKit
 
 class Face: NSObject {
     init(newBounds:CGRect)  {
-        bounds = CGRectZero
+        bounds = newBounds
     }
     
     var bounds : CGRect

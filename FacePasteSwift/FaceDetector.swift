@@ -40,8 +40,11 @@ class FaceDetector: NSObject {
         let features : Array = self.detector.featuresInImage(ciImage)
         var faces : Array<Face> = Array()
         
+        var transform = CGAffineTransformMakeScale(1, -1)
+        transform = CGAffineTransformTranslate(transform, 0, -anImage.size.height)
+        
         for f : CIFaceFeature in features as Array<CIFaceFeature> {
-            let face : Face = Face(newBounds: f.bounds)
+            let face : Face = Face(newBounds: CGRectApplyAffineTransform(f.bounds, transform))
             faces.append(face)
         }
         
