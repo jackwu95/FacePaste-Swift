@@ -14,5 +14,6 @@ class Face: NSObject {
     }
     
     var bounds : CGRect
+    var image : UIImage?
    
 }

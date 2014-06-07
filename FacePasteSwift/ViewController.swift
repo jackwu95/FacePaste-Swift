@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, FaceDetectorDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, FaceDetectorDelegate, ImageProcessorDelegate {
                             
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +30,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     var workingImage : UIImage!
     var buttons : Array<UIButton> = []
+    var detectedFaces : Array<Face>!
     
     @IBAction func pickFromAlbum(sender : UIBarButtonItem) {
         imagePicker.delegate = self
@@ -45,6 +46,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingMediaWithInfo info: NSDictionary!) {
         self.dismissViewControllerAnimated(true, completion: nil)
+        
+        for b : UIButton in buttons {
+            b.removeFromSuperview()
+        }
+        buttons.removeAll(keepCapacity: false)
+        
         workingImage = info[UIImagePickerControllerOriginalImage] as UIImage
         imageView.image = workingImage
         
@@ -56,6 +63,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func faceDetectorDidFinishDetecingWith(image: UIImage, faces: Array<Face>)  {
         println("Found \(faces.count) faces")
         imageView.image = image;
+        detectedFaces = faces
         
         // Set up some face buttons
 
@@ -79,6 +87,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 button.addTarget(self, action: Selector("faceButtonPressed:"), forControlEvents: UIControlEvents.TouchUpInside)
                 button.layer.borderWidth = 2
                 button.layer.borderColor = UIColor.whiteColor().CGColor
+                button.layer.cornerRadius = button.bounds.width/2
                 button.tag = i++
                 return button
             } ()
@@ -89,7 +98,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func faceButtonPressed(sender: UIButton) {
-        
+        let processor = ImageProcessor.sharedDetector
+        processor.delegate = self
+        let face = detectedFaces[sender.tag]
+        processor.replaceFacesInImage(workingImage, face: face, faces: detectedFaces)
+    }
+    
+    func imageProcessorFinishedProcessingImage(image: UIImage)  {
+        imageView.image = image
     }
 }
 

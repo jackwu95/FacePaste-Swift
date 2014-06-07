@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FacePasteSwift/ViewController.swift"
-            timestampString = "423713933.173861"
+            timestampString = "423772364.675965"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "faceDetectorDidFinishDetecingWith(_:faces:)"
             landmarkType = "5">
          </BreakpointContent>

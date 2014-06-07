@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol FaceDetectorDelegate : NSObjectProtocol {
+protocol FaceDetectorDelegate {
     func faceDetectorDidFinishDetecingWith(image:UIImage, faces:Array<Face>)
 }
 

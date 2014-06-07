@@ -14,6 +14,7 @@
 		4D9FCF3F1940FF450050E440 /* FacePasteSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9FCF3E1940FF450050E440 /* FacePasteSwiftTests.swift */; };
 		4D9FCF4B19410AD60050E440 /* FaceDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9FCF4A19410AD60050E440 /* FaceDetector.swift */; };
 		4D9FCF4D194120A10050E440 /* Face.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9FCF4C194120A10050E440 /* Face.swift */; };
+		4D9FCF4F19416AD10050E440 /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9FCF4E19416AD10050E440 /* ImageProcessor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		4D9FCF3E1940FF450050E440 /* FacePasteSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacePasteSwiftTests.swift; sourceTree = "<group>"; };
 		4D9FCF4A19410AD60050E440 /* FaceDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceDetector.swift; sourceTree = "<group>"; };
 		4D9FCF4C194120A10050E440 /* Face.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Face.swift; sourceTree = "<group>"; };
+		4D9FCF4E19416AD10050E440 /* ImageProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageProcessor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				4D9FCF2B1940FF450050E440 /* AppDelegate.swift */,
 				4D9FCF2D1940FF450050E440 /* ViewController.swift */,
 				4D9FCF4A19410AD60050E440 /* FaceDetector.swift */,
+				4D9FCF4E19416AD10050E440 /* ImageProcessor.swift */,
 				4D9FCF4C194120A10050E440 /* Face.swift */,
 				4D9FCF2F1940FF450050E440 /* Main.storyboard */,
 				4D9FCF321940FF450050E440 /* Images.xcassets */,
@@ -216,6 +219,7 @@
 			files = (
 				4D9FCF4D194120A10050E440 /* Face.swift in Sources */,
 				4D9FCF2E1940FF450050E440 /* ViewController.swift in Sources */,
+				4D9FCF4F19416AD10050E440 /* ImageProcessor.swift in Sources */,
 				4D9FCF4B19410AD60050E440 /* FaceDetector.swift in Sources */,
 				4D9FCF2C1940FF450050E440 /* AppDelegate.swift in Sources */,
 			);
