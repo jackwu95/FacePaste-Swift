@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Face: NSObject {
+class Face : NSObject{
     init(newBounds:CGRect)  {
         bounds = newBounds
     }

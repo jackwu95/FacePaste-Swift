@@ -125,13 +125,13 @@ extension UIImageView {
                 let scale = bounds.size.height / image.size.height
                 let width = scale * image.size.width
                 let offset = 0.5 * (bounds.size.width - width)
-                rect = CGRectMake(offset, 0, width, bounds.size.height)
+                rect = CGRect(x: offset, y: 0, width: width, height: bounds.size.height)
             }
             else {
                 let scale = bounds.size.width / image.size.width
                 let height = scale * image.size.height
                 let offset = 0.5 * (bounds.size.height - height)
-                rect = CGRectMake(0, offset, bounds.size.width, height)
+                rect = CGRect(x: 0, y: offset, width: bounds.size.width, height: height)
             }
         default :
             println("Content Mode unsupported")

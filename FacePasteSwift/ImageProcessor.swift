@@ -35,8 +35,8 @@ class ImageProcessor: NSObject {
         
         if !face.image {
             let scale = image.scale > 1.0 ? image.scale : 1.0
-            let scaledRect = CGRectMake(face.bounds.origin.x * scale, face.bounds.origin.y * scale, face.bounds.size.width * scale, face.bounds.size.height * scale)
-            let imageRef : CGImageRef = CGImageCreateWithImageInRect(image.CGImage, scaledRect)
+            let scaledRect = CGRect(x: face.bounds.origin.x * scale, y: face.bounds.origin.y * scale, width: face.bounds.size.width * scale, height: face.bounds.size.height * scale)
+            let imageRef = CGImageCreateWithImageInRect(image.CGImage, scaledRect)
             face.image = UIImage(CGImage: imageRef)
             CGImageRelease(imageRef)
         }
@@ -44,7 +44,7 @@ class ImageProcessor: NSObject {
        
         let faceCIImage = CIImage(image:faceImage)
         
-        let sourceRect = CGRectMake(0, 0, face.bounds.size.width, face.bounds.size.height)
+        let sourceRect = CGRect(x: 0, y: 0, width: face.bounds.size.width, height: face.bounds.size.height)
         let center = CIVector(x: CGRectGetMidX(sourceRect), y: CGRectGetMidY(sourceRect))
         let radius0 = sourceRect.size.width * 0.7 * 0.5
         let radius1 = sourceRect.size.width * 0.5
